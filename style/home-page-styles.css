@@ -14,6 +14,7 @@ body::before{
     height: 100%;
     position: absolute;
     opacity: .2;
+    transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
 }
 .menu{
     padding: 1rem 0;
@@ -42,6 +43,7 @@ body::before{
     width: calc(100% / 5 - 2%);
     height: 70vh;
     position: relative;
+    transition: filter 0.5 ease-in-out;
 }
 .card__background{
     width: 100%;
@@ -49,6 +51,7 @@ body::before{
     object-fit: cover;
     position: absolute;
     opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 .background-lol{
     object-position: calc(21%);
@@ -57,14 +60,14 @@ body::before{
     object-position: calc(70%);
 }
 .background-lor{
-    object-position: top;
+    object-position: calc(70%);
 }
-
 .card__image{
     width: 100%;
     height: 100%;
     object-fit: contain;
     position: relative;
+    transition: 1s ease-in-out;
 }
 
 .card-title{
@@ -120,4 +123,30 @@ body::before{
 }
 .card--hovered .card__image{
     transform: scale(1.4);
+    filter: drop-shadow(30px 10px 4px rgba(0,0,0, .5));
 }
+body#s-league-of-legends-hovered::before{
+    background-image: url(/images/cards/LEAGUE\ OF\ LEGENDS.jpeg);
+}
+body#s-teamfight-tatics-hovered::before{
+    background-image: url(/images/cards/tftfundo.jpg);
+}
+body#s-valorant-hovered::before{
+    background-image: url(/images/cards/characters-from-valorant_5000x2812_xtrafondos.com.jpg);
+}
+body#s-legends-of-runeterra-hovered::before{
+    background-image: url(/images/cards/Nasus\ vs\ Renekton.jpg);
+    background-size: cover;
+}
+body#s-wild-rift-hovered::before{
+    background-image: url(/images/cards/LoL_WR_KV_Banner_1920x1080.jpg);
+}
+
+body[id^="s-"]::before{
+    opacity: 1;
+}
+body[id^="s-"] .card:not(.card--hovered){
+    filter: grayscale(100%);
+    opacity: 0.1;
+}
+
