@@ -77,6 +77,7 @@ body::before{
     position: absolute;
     width: 100%;
     bottom: 0;
+    transition: bottom 1s ease-in-out;
 }
 .controller{
     position: relative;
@@ -148,5 +149,8 @@ body[id^="s-"]::before{
 body[id^="s-"] .card:not(.card--hovered){
     filter: grayscale(100%);
     opacity: 0.1;
+}
+.card--hovered .card-title{
+    bottom: 50%;
 }
 
